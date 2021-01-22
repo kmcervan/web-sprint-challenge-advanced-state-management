@@ -1,9 +1,55 @@
+import { FETCH_SMURF, FETCHED_SMURF, FETCH_SMURF_FAIL, ERROR, ADD_SMURF_SUCCESS, ADD_SMURF_FAIL } from '../actions/index';
 
+// added initialState
 export const initialState = {
+    smurfs: [],
+    isLoading: false,
+    error:''
 }
-
-const reducer = ()=>{
-}
+// creating reducer to start/end api, add a smurf, and display error
+export const reducer = (state = initialState, action)=>{
+    
+    switch(action.type){
+        case(FETCH_SMURF):
+            return({
+                ...state,
+                smurfs: [],
+                isLoading: true,
+                error:''
+            });
+        case(FETCHED_SMURF):
+            return({
+                ...state,
+                smurfs: action.payload,
+                isLoading: false,
+                error:''
+            }); 
+        case(FETCH_SMURF_FAIL):
+            return({
+                ...state,
+                isLoading: false,
+                error: action.payload
+            }); 
+        case(ERROR): // CAHNGE
+            return({
+                ...state,
+                isLoading: false,
+                error: action.payload // YOU NEED TO GO BACK IN AND CHANGE THIS IN YOUR ACTIONS.JS
+            });  
+        case(ADD_SMURF_SUCCESS): 
+            return({
+                ...state,
+                isLoading: false,
+                error: '',
+            });
+        case(ADD_SMURF_FAIL): 
+            return({
+                ...state,
+                isLoading: false,
+                error: action.payload
+            });
+    }
+};
 
 export default reducer;
 
