@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { getSmurfs } from '../actions/index';
+import { getSmurfs, addSmurf } from '../actions/index';
 
 class AddForm extends React.Component {
     state = {
@@ -19,14 +19,15 @@ class AddForm extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        // ADD YOUR POST HANDLER;
+        // ADD YOUR POST HANDLER; DONE
+        this.props.ADD_SMURF_SUCCESS(this.state.formValue);
         this.setState({
             formValue:""
         });
     }
-    if(props.error) {
-        return <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: </div>;
-    }
+    // if(props.error) {
+    //     return <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: </div>;
+    // }
 
     render() {
         return(<section>
@@ -59,7 +60,7 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, { getSmurfs })(AddForm);
+export default connect(mapStateToProps, { getSmurfs, addSmurf })(AddForm);
 
 //Task List:
 //1. Add in all necessary import components and library methods.

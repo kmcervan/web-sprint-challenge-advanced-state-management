@@ -33,12 +33,14 @@ export const reducer = (state = initialState, action)=>{
         case(ERROR): // CAHNGE
             return({
                 ...state,
+                smurfs: [],
                 isLoading: false,
                 error: action.payload // YOU NEED TO GO BACK IN AND CHANGE THIS IN YOUR ACTIONS.JS
             });  
         case(ADD_SMURF_SUCCESS): 
             return({
                 ...state,
+                smurfs: action.payload,
                 isLoading: false,
                 error: '',
             });
