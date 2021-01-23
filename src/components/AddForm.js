@@ -23,9 +23,9 @@ class AddForm extends React.Component {
         this.props.addSmurf(this.state);
     }
     render() {
-    // if(error()) {
-    //     return <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {this.props.error}</div>;
-    // }
+    if(this.props.ERROR) {
+        return <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {this.props.error}</div>;
+    }
 
     
         return(<section>
