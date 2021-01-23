@@ -1,15 +1,14 @@
 import { FETCH_SMURF, FETCHED_SMURF, FETCH_SMURF_FAIL, ERROR, ADD_SMURF_SUCCESS, ADD_SMURF_FAIL } from '../actions/index';
 
 // added initialState
-export const initialState = {
+const initialState = {
     smurfs: [],
     isLoading: false,
-    error:''
+    error:'',
 }
 // creating reducer to start/end api, add a smurf, and display error
-export const reducer = (state = initialState, action)=>{
-    
-    switch(action.type){
+export const reducer = (state = initialState, action) => {
+    switch (action.type) {
         case(FETCH_SMURF):
             return({
                 ...state,
@@ -30,26 +29,35 @@ export const reducer = (state = initialState, action)=>{
                 isLoading: false,
                 error: action.payload
             }); 
-        case(ERROR): // CAHNGE
-            return({
-                ...state,
-                smurfs: [],
-                isLoading: false,
-                error: action.payload // YOU NEED TO GO BACK IN AND CHANGE THIS IN YOUR ACTIONS.JS
-            });  
         case(ADD_SMURF_SUCCESS): 
             return({
                 ...state,
                 smurfs: action.payload,
                 isLoading: false,
                 error: '',
-            });
-        case(ADD_SMURF_FAIL): 
+            });   
+        case(ERROR):
             return({
                 ...state,
-                isLoading: false,
+                isLoading:false,
                 error: action.payload
-            });
+            })
+        // case(ERROR): // CAHNGE
+        //     return({
+        //         ...state,
+        //         smurfs: [],
+        //         isLoading: false,
+        //         error: action.payload // YOU NEED TO GO BACK IN AND CHANGE THIS IN YOUR ACTIONS.JS
+        //     });  
+        
+        // case(ADD_SMURF_FAIL): 
+        //     return({
+        //         ...state,
+        //         isLoading: false,
+        //         error: action.payload
+        //     });
+        default:
+            return state;
     }
 };
 

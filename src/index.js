@@ -11,11 +11,11 @@ import thunk from 'redux-thunk';
 
 import { reducer } from './reducers/index'
 
-const { worker } = require('./mocks/browser');
-worker.start();
-
 // starting with STORE for provider
 const store = createStore(reducer, applyMiddleware(thunk));
+
+const { worker } = require('./mocks/browser');
+worker.start();
 
 const rootElement = document.getElementById("root");
 

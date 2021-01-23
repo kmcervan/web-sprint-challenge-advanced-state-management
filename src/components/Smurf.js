@@ -1,10 +1,20 @@
 import React from 'react';
 
 class Smurf extends React.Component {
+    
     render() {
         const { smurf } = this.props;
-
+        
         return(<div data-testid="smurf" className="card">
+            
+            {smurf.map((id) => {
+                return <div className='smurf-card'>
+                    <h2>{id.name}</h2>
+                    <p>Position: {id.position}</p>
+                    <p>Nickname: {id.nickname}</p>
+                    <p>Description: {id.description}</p>
+                </div>
+            })}
         </div>);
     }
 }

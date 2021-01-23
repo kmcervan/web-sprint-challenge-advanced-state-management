@@ -35,7 +35,17 @@ section {
   margin:0;
   padding:0;
 }
-
+ /*********** MY CSS *****************/
+ .card{
+   margin: auto;
+   /* width:50%; */
+ }
+ .smurf-card{
+   margin: auto;
+   width: 50%;
+   border: 2px black solid;
+   
+ }
 
 
 @media (max-width: 800px) {
