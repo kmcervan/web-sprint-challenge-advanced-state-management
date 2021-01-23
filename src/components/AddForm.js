@@ -23,10 +23,10 @@ class AddForm extends React.Component {
         this.props.addSmurf(this.state);
     }
     render() {
-    if(this.props.ERROR) {
-        return <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {this.props.error}</div>;
-    }
-
+    // if(this.props.ERROR) {
+    //     return <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {this.props.error}</div>;
+    // }
+// ERROR message is appearing on console
     
         return(<section>
             <h2>Add Smurf</h2>
@@ -41,8 +41,8 @@ class AddForm extends React.Component {
                     <label htmlFor="description">Description:</label><br/>
                     <input onChange={this.handleChange} value={this.state.description} name="description" id="description" />
                 </div>
-
-                {/* <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: </div> */}
+                
+                <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {this.props.error} </div>
                 <button>Submit Smurf</button>
             </form>
         </section>);
