@@ -50,12 +50,12 @@ export const reducer = (state = initialState, action) => {
         //         error: action.payload // YOU NEED TO GO BACK IN AND CHANGE THIS IN YOUR ACTIONS.JS
         //     });  
         
-        // case(ADD_SMURF_FAIL): 
-        //     return({
-        //         ...state,
-        //         isLoading: false,
-        //         error: action.payload
-        //     });
+        case(ADD_SMURF_FAIL): 
+            return({
+                ...state,
+                isLoading: false,
+                error: action.payload
+            });
         default:
             return state;
     }

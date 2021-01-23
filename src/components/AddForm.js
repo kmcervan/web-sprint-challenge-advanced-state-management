@@ -22,10 +22,17 @@ class AddForm extends React.Component {
         // ADD YOUR POST HANDLER; DONE
         this.props.addSmurf(this.state);
     }
-    render() {
-    // if(this.props.ERROR) {
-    //     return <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {this.props.error}</div>;
+    // errorMessage = () => {
+    //     console.log(this.props.error);
+    //     if(this.props.error) {
+    //     return this.props.error();
+    //     }
     // }
+    render() {
+    // 
+    if(this.props.error) {
+        return <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {this.props.error} </div>
+        }
 // ERROR message is appearing on console
     
         return(<section>
@@ -42,7 +49,7 @@ class AddForm extends React.Component {
                     <input onChange={this.handleChange} value={this.state.description} name="description" id="description" />
                 </div>
                 
-                <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {this.props.error()} </div>
+                {/* <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {this.errorMessage} </div> */}
                 <button>Submit Smurf</button>
             </form>
         </section>);

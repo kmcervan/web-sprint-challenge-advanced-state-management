@@ -5,7 +5,7 @@ export const FETCHED_SMURF = 'FETCHED_SMURF';
 export const FETCH_SMURF_FAIL = 'FETCH_SMURF_FAIL';
 // export const ERROR = 'ERROR';
 export const ADD_SMURF_SUCCESS = 'ADD_SMURF_SUCCESS';
-// export const ADD_SMURF_FAIL = 'ADD_SMURF_FAIL';
+export const ADD_SMURF_FAIL = 'ADD_SMURF_FAIL';
 export const ERROR = 'ERROR';
 
 export const getSmurfs = () => dispatch => {
@@ -18,7 +18,7 @@ export const getSmurfs = () => dispatch => {
     })
     .catch(err => {
         console.log(err);
-        // dispatch({type: FETCH_SMURF_FAIL, payload: err});
+        dispatch({type: FETCH_SMURF_FAIL, payload: err.request.response});
     })
 };
 
@@ -32,7 +32,7 @@ export const addSmurf = (newSmurf) => dispatch => {
     })
     .catch((err) => {
         console.log(err);
-        // dispatch({ type:ADD_SMURF_FAIL, payload: err});
+        dispatch({ type:ADD_SMURF_FAIL, payload: err.resquest.response});
     })
 }
 
