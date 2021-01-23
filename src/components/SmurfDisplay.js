@@ -13,8 +13,8 @@ export class SmurfDisplay extends React.Component {
         return <h2>Fetching Details From Papa Smurf!</h2>
     }
    
-        return(<div>
-            <h2>Smurfs</h2>
+        return(<div className='display-container'>
+            <h2 className='display'>Smurfs</h2>
             <Smurf smurf={this.props.smurfs} />
         </div>)
     }

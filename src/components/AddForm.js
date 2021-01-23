@@ -25,15 +25,15 @@ class AddForm extends React.Component {
     // errorMessage = () => {
     //     console.log(this.props.error);
     //     if(this.props.error) {
-    //     return this.props.error();
+    //     return this.props.error;
     //     }
     // }
     render() {
-    // 
+    
     if (this.props.error) {
         return <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {this.props.error} </div>
         }
-// ERROR message is appearing on console
+
     
         return(<section>
             <h2>Add Smurf</h2>

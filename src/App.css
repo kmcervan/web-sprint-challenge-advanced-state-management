@@ -36,16 +36,36 @@ section {
   padding:0;
 }
  /*********** MY CSS *****************/
- .card{
+ .smurf-card{
    margin: auto;
    /* width:50%; */
  }
- .smurf-card{
-   margin: auto;
+ .card{
+   margin: 2% 25%;
    width: 50%;
+   padding: 5%;
    border: 2px black solid;
-   
+   border-radius: 10px;
  }
+ .card h2{
+   text-align: center;
+   padding-bottom: 4px;
+   border-bottom: 2px  #007bff solid;
+ }
+.card p span{
+  font-weight: bold;
+}
+.display-container{
+  margin: auto;
+  /* border: 2px  #007bff solid; */
+}
+.display{
+  color: #007bff;
+  font-size: 3rem;
+  /* border: 2px  #007bff solid; */
+  /* margin: 0 25%; */
+  justify-content: center;
+}
 
 
 @media (max-width: 800px) {
