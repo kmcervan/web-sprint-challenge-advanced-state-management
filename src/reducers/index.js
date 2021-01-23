@@ -36,12 +36,12 @@ export const reducer = (state = initialState, action) => {
                 isLoading: false,
                 error: '',
             });   
-        case(ERROR):
-            return({
-                ...state,
-                isLoading:false,
-                error: action.payload
-            })
+        // case(ERROR):
+        //     return({
+        //         ...state,
+        //         isLoading:false,
+        //         error: action.payload
+        //     })
         // case(ERROR): // CAHNGE
         //     return({
         //         ...state,

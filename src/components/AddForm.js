@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addSmurf, error } from '../actions/index';
+import { addSmurf } from '../actions/index';
 
 class AddForm extends React.Component {
     state = {
@@ -30,7 +30,7 @@ class AddForm extends React.Component {
     // }
     render() {
     // 
-    if(this.props.error) {
+    if (this.props.error) {
         return <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {this.props.error} </div>
         }
 // ERROR message is appearing on console
@@ -65,7 +65,7 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, { addSmurf, error })(AddForm);
+export default connect(mapStateToProps, { addSmurf })(AddForm);
 
 // export default AddForm;
 
